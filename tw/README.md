@@ -26,7 +26,7 @@ npx hyperframes render tw/9x16-product/index.html -o out/product-9x16.mp4
 - 畫面內所有中文字都是 HTML 疊加，**不叫模型畫中文字**。
 - 產品圖請用自己的官方照片，不要用 AI 生成的產品圖。
 - 範本內不寫價格、不寫折扣。
-- 字體：Noto Sans TC，授權 SIL OFL 1.1；範本用 Google Fonts 載入，fallback 順序為 `"Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif`。本機沒裝 Noto Sans TC 時會退回系統字型，排版可能跑掉，請先確認字體有載入。不要修改字型檔再重新發布。
+- 字體：Noto Sans TC，授權 SIL OFL 1.1；範本用 Google Fonts 載入，fallback 只寫 `"Noto Sans TC", sans-serif`。不要把蘋方、微軟正黑體寫進 font-family——HyperFrames lint 會報錯（渲染器無法自動提供這些系統字型，雲端渲染會直接退回通用字型）。本機沒裝 Noto Sans TC 時會退回通用 sans-serif，排版可能跑掉，請先確認字體有載入。不要修改字型檔再重新發布。
 - 安全區：上方留 180px（帳號列），下方留 320px（按讚、留言、字幕區），重要文字只放中間 300–1420px。
 
 ## 授權與聲明
