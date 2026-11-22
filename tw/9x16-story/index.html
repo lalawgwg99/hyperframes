@@ -1,0 +1,68 @@
+<!doctype html>
+<!-- 台灣版範本：9:16 說書開場（15 秒）| HyperFrames 台灣版 fork -->
+<!-- 畫面內所有文字都是 HTML 疊加，模型不畫中文字。 -->
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>說書開場 9:16</title>
+    <script src="assets/gsap.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        margin: 0; width: 1080px; height: 1920px; overflow: hidden;
+        background: #f7f3ea;
+        font-family: "Noto Sans TC", sans-serif;
+      }
+      .scene { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+      /* 安全區：上方留 180px，下方留 320px，文字只放中間 300–1420px */
+      .safe { position: absolute; top: 340px; left: 88px; right: 88px; height: 1080px; }
+      .rule { width: 120px; height: 10px; background: #4823ff; border-radius: 5px; }
+      .book { color: #6b6257; font-size: 46px; font-weight: 500; letter-spacing: 4px; margin-top: 36px; }
+      .title { color: #1a1a1a; font-size: 104px; font-weight: 900; line-height: 1.3; margin-top: 28px; }
+      .hook { color: #3d3a33; font-size: 52px; font-weight: 500; line-height: 1.8; margin-top: 48px; }
+      .hook b { color: #4823ff; }
+      .q { margin-top: 56px; border-left: 10px solid #4823ff; padding-left: 32px;
+           color: #1a1a1a; font-size: 50px; font-weight: 700; line-height: 1.7; }
+      .foot { position: absolute; left: 88px; right: 88px; bottom: 380px;
+              color: #6b6257; font-size: 42px; font-weight: 500; letter-spacing: 2px; }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="tw-9x16-story"
+      data-start="0"
+      data-duration="15"
+      data-width="1080"
+      data-height="1920"
+    >
+      <div class="scene">
+        <div class="safe">
+          <div class="rule" id="rule"></div>
+          <div class="book" id="book">今天讀這本書</div>
+          <div class="title" id="title">一個觀念，<br />改變一種做法。</div>
+          <div class="hook" id="hook">這本書最打動我的<br />不是理論，是<b>一句話</b>。</div>
+          <div class="q" id="q">如果你只能記住一件事，<br />你會記住哪一句？</div>
+        </div>
+        <div class="foot" id="foot">SlowFolio · 慢錢研究所</div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.from("#rule", { scaleX: 0, transformOrigin: "left center", duration: 0.5, ease: "power3.out" }, 0);
+      tl.from("#book", { opacity: 0, y: 24, duration: 0.6, ease: "power3.out" }, 0.3);
+      tl.from("#title", { opacity: 0, y: 56, duration: 0.8, ease: "power3.out" }, 0.7);
+      tl.from("#hook", { opacity: 0, y: 40, duration: 0.7, ease: "power3.out" }, 1.6);
+      tl.from("#q", { opacity: 0, x: -40, duration: 0.7, ease: "power3.out" }, 2.6);
+      tl.from("#foot", { opacity: 0, duration: 0.6 }, 3.4);
+      tl.to("#foot", { opacity: 0, duration: 0.5, ease: "power2.in" }, 14.2);
+      window.__timelines["tw-9x16-story"] = tl;
+    </script>
+  </body>
+</html>
