@@ -1,0 +1,66 @@
+<!doctype html>
+<!-- 台灣版範本：9:16 活動公告（12 秒）| HyperFrames 台灣版 fork -->
+<!-- 畫面內所有文字都是 HTML 疊加，模型不畫中文字。日期、時間請改成你自己的活動資訊。 -->
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>活動公告 9:16</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        margin: 0; width: 1080px; height: 1920px; overflow: hidden;
+        background: #4823ff;
+        font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      }
+      .scene { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+      /* 安全區：上方留 180px，下方留 320px，文字只放中間 300–1420px */
+      .safe { position: absolute; top: 360px; left: 88px; right: 88px; height: 1060px; }
+      .tag { display: inline-block; background: #fff; color: #4823ff; border-radius: 999px;
+             font-size: 46px; font-weight: 900; letter-spacing: 4px; padding: 18px 40px; }
+      .title { color: #fff; font-size: 116px; font-weight: 900; line-height: 1.25; margin-top: 40px; }
+      .info { margin-top: 56px; color: #fff; font-size: 54px; font-weight: 500; line-height: 1.9; }
+      .info b { font-weight: 900; }
+      .card { margin-top: 56px; background: rgba(255,255,255,0.14); border: 2px solid rgba(255,255,255,0.5);
+              border-radius: 28px; padding: 36px 40px; color: #fff; font-size: 48px; line-height: 1.7; }
+      .foot { position: absolute; left: 88px; right: 88px; bottom: 380px;
+              color: rgba(255,255,255,0.85); font-size: 44px; font-weight: 500; }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="tw-9x16-notice"
+      data-start="0"
+      data-duration="12"
+      data-width="1080"
+      data-height="1920"
+    >
+      <div class="scene">
+        <div class="safe">
+          <div class="tag" id="tag">活動公告</div>
+          <div class="title" id="title">這週末，<br />來店裡看看。</div>
+          <div class="info" id="info">時間：<b>週六 10:00–18:00</b><br />地點：<b>請改成你的店名地址</b></div>
+          <div class="card" id="card">現場有專人介紹，<br />不用預約，直接來就好。</div>
+        </div>
+        <div class="foot" id="foot">詳情請看內文說明</div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.from("#tag", { opacity: 0, scale: 0.85, duration: 0.5, ease: "back.out(1.6)" }, 0);
+      tl.from("#title", { opacity: 0, y: 56, duration: 0.8, ease: "power3.out" }, 0.4);
+      tl.from("#info", { opacity: 0, y: 40, duration: 0.7, ease: "power3.out" }, 1.2);
+      tl.from("#card", { opacity: 0, y: 40, duration: 0.7, ease: "power3.out" }, 2.0);
+      tl.from("#foot", { opacity: 0, duration: 0.6 }, 2.8);
+      tl.to("#foot", { opacity: 0, duration: 0.5, ease: "power2.in" }, 11.2);
+      window.__timelines["tw-9x16-notice"] = tl;
+    </script>
+  </body>
+</html>
